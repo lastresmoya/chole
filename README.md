@@ -2,6 +2,9 @@
 
 The goal of the ChOLE webapp is to offer users a simple to use and device independent (PC, mac OS, iOS, Android) application to calculate the ChOLE stage. 
 
+![alt text](https://github.com/lastresmoya/chole/blob/master/src/images/chole-desktop.png "Preview Chole")
+
+
 ---
 
 The user needs to choose one option for each category (Ch, O, L, E) and the application calculates the overall stage. The categories are:
