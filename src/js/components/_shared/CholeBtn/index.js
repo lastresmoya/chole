@@ -1,19 +1,25 @@
 import React from "react";
+import FaIcon from '@fortawesome/react-fontawesome';
+import { faExpand, faInfoCircle } from '@fortawesome/fontawesome-free-solid';
+
 
 function CholeBtn(props) {
-	const {hints,resizeImg,prevImg, choleKey} = props;
+    const {hints,resizeImg,prevImg, choleKey, active} = props;
+    console.log(active);
 	return (
 		<div className="chole-btn-wrap">
-			<div className="chole-btn">
+			<div className={`chole-btn ${active && "active"}`}>
 				{/* Display Image if there's one */}
 				{prevImg && <img src={prevImg}/>}
 				{/* If there's no Prop Img diplay Children */}
 				{!prevImg && <span>{props.children}</span>}
 				<div className="btn-options">
 					{/* IF hints are active on Settings, display hint */}
-					{hints && <small>i</small>}
-					{resizeImg &&
-                        <small data-toggle="modal" data-target={`#imageModal${choleKey}`}>rsx</small>
+					{hints && <button><FaIcon icon={faInfoCircle}/></button>}
+					{prevImg &&
+                        <span>
+                        	{resizeImg && <button data-toggle="modal" data-target={`#imageModal${choleKey}`}><FaIcon icon={faExpand}/></button>}
+                        </span>
 					}
 				</div>
 			</div>

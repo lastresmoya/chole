@@ -3,9 +3,9 @@ import React from "react";
 function Footer({overallStage,chole}) {
 	return (
 		<footer>
-			<div className="container">
-				<div>ChOLE CLassification: {chole}</div>
-				<div>OverallStage: {overallStage}</div>
+			<div className="container d-flex justify-content-between">
+				<div><strong>ChOLE CLassification</strong> {chole}</div>
+				<div><strong>OverallStage</strong> {overallStage}</div>
 			</div>
 		</footer>
 	);

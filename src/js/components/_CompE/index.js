@@ -12,36 +12,35 @@ class CompE extends Component {
 		super(props);
 		this.state = {
 			numberVal: "X",
-			letterVal: ""
+			letterVal: "",
+            
 		};
-	}
-	onValueChange () {
-
 	}
 	render() {
 		const {settings} = this.props;
+		const name = "Ch";
 		return (
 			<div className="chole-section">
-				<h5 className="text-primary text-sm-center">Extension</h5>
+				<h5 className="chole-title text-primary">Extension</h5>
 				{/* X */}
 				<div>
-					<button className="btn btn-light btn-sm btn-block">Not Identifiable (Not specified)</button>
+                    <button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
 				</div>
 				{/* 0 */}
 				<div className="chole-row"></div>
 				{/* 1 */}
 				<div className="chole-row row-double">
-					<CholeBtn {...settings} prevImg={Ch1a} choleKey={"Ch1a"}/>
-					<CholeBtn {...settings} prevImg={Ch1b} choleKey={"Ch1b"}/>
+					<CholeBtn {...settings} prevImg={Ch1a} choleKey={`${name}1a`} />
+					<CholeBtn {...settings} prevImg={Ch1b} choleKey={`${name}1b`} />
 				</div>
 				{/* 2 */}
 				<div className="chole-row row-double">
-					<CholeBtn {...settings} prevImg={Ch2a} choleKey={"Ch2a"}/>
-					<CholeBtn {...settings} prevImg={Ch2b} choleKey={"Ch2b"}/>
+					<CholeBtn {...settings} prevImg={Ch2a} choleKey={`${name}2a`} active />
+					<CholeBtn {...settings} prevImg={Ch2b} choleKey={`${name}2b`} />
 				</div>
 				{/* 3 */}
 				<div className="chole-row">
-					<CholeBtn {...settings} prevImg={Ch3} choleKey={"Ch3"}/>
+					<CholeBtn {...settings} prevImg={Ch3} choleKey={`${name}3`}/>
 				</div>
 				{/* 4 */}
 				<div className="chole-row row-double">

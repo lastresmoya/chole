@@ -8,6 +8,7 @@ import E from "./_CompE";
 import OCS from "./_CompOCS";
 import LTC from "./_CompLTC";
 import ETVMP from "./_CompETVMP";
+import IdentifierCol from "./_shared/IdentifierCol";
 
 
 class App extends React.Component {
@@ -49,6 +50,7 @@ class App extends React.Component {
 				<Header/>
 				<div className="container">
 					<div className="d-sm-flex justify-content-sm-between align-items-baseline py-3">
+						<IdentifierCol/>
 						<E settings={{hints,resizeImg}}/>
 						<OCS settings={{hints,resizeImg}}/>
 						<LTC settings={{hints,resizeImg}}/>

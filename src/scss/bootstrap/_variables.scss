@@ -67,7 +67,7 @@ $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
+$light:         $gray-200 !default;
 $dark:          $gray-800 !default;
 
 $theme-colors: () !default;
@@ -135,6 +135,7 @@ $sizes: (
 //
 // Settings for the `<body>` element.
 
+// $body-bg:                   $white !default;
 $body-bg:                   $white !default;
 $body-color:                $gray-900 !default;
 
