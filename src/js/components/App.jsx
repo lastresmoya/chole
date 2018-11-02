@@ -18,8 +18,10 @@ class App extends React.Component {
 			OCS: "X",
 			LTC: "X",
 			ETVMP: "X",
-			overallStage: "Overall stage cannot be calculated"
-		}
+			overallStage: "Overall stage cannot be calculated",
+			hints: true,
+			resizeImg:true
+		};
 	}
 	componentDidMount(){
 		AOS.init({
@@ -41,14 +43,19 @@ class App extends React.Component {
 		);
 	}
 	render() {
+		const { hints,resizeImg,overallStage} = this.state;
 		return (
 			<div className="app">
 				<Header/>
-				<E/>
-				<OCS/>
-				<LTC/>
-				<ETVMP/>
-				<Footer overallStage={this.state.overallStage} chole={this.renderChole()}/>
+				<div className="container">
+					<div className="d-sm-flex justify-content-sm-between align-items-baseline py-3">
+						<E settings={{hints,resizeImg}}/>
+						<OCS settings={{hints,resizeImg}}/>
+						<LTC settings={{hints,resizeImg}}/>
+						<ETVMP settings={{hints,resizeImg}}/>
+					</div>
+				</div>
+				<Footer overallStage={overallStage} chole={this.renderChole()}/>
 			</div>
 		);
 	}

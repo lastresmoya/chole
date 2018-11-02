@@ -2,7 +2,7 @@ import React from "react";
 
 function CompETVMP(props) {
 	return (
-		<div>
+		<div className="chole-section">
             ETVMP
 		</div>
 	);

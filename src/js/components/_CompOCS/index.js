@@ -2,7 +2,7 @@ import React from "react";
 
 function CompOCS(props) {
 	return (
-		<div>
+		<div className="chole-section">
             CompOCS
 		</div>
 	);

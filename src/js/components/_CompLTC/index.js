@@ -2,7 +2,7 @@ import React from "react";
 
 function CompLTC(props) {
 	return (
-		<div>
+		<div className="chole-section">
             CompLTC
 		</div>
 	);
