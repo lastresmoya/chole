@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import CholeBtn from "../_shared/CholeBtn";
+import CompWrapper from "../_shared/CompWrapper";
 import Ch1a from "./assets/Ch1a.png";
 import Ch1b from "./assets/Ch1b.png";
 import Ch2a from "./assets/Ch2a.png";
@@ -13,18 +14,16 @@ class CompE extends Component {
 		this.state = {
 			numberVal: "X",
 			letterVal: "",
-            
 		};
 	}
 	render() {
 		const {settings} = this.props;
-		const name = "Ch";
-		return (
-			<div className="chole-section">
-				<h5 className="chole-title text-primary">Extension</h5>
+    	const name = "Ch";
+    	return (
+    		<CompWrapper title="Extension" name={name}>
 				{/* X */}
 				<div>
-                    <button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
+					<button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
 				</div>
 				{/* 0 */}
 				<div className="chole-row"></div>
@@ -40,19 +39,20 @@ class CompE extends Component {
 				</div>
 				{/* 3 */}
 				<div className="chole-row">
-					<CholeBtn {...settings} prevImg={Ch3} choleKey={`${name}3`}/>
+					<CholeBtn {...settings} prevImg={Ch3} choleKey={`${name}3`} />
 				</div>
 				{/* 4 */}
 				<div className="chole-row row-double">
 					<CholeBtn {...settings}>
-                    a) Supra- or infralabyrinthine extension of tympanomastoid cholesteatoma
+                        a) Supra- or infralabyrinthine extension of tympanomastoid cholesteatoma
 					</CholeBtn>
 					<CholeBtn {...settings}>
-                    b) Petrous apex cholesteatoma
+                        b) Petrous apex cholesteatoma
 					</CholeBtn>
 				</div>
-			</div>
-		);
+				
+    		</CompWrapper>
+    	);
 	}
 }
 

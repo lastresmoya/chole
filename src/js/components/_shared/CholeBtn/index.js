@@ -5,7 +5,7 @@ import { faExpand, faInfoCircle } from '@fortawesome/fontawesome-free-solid';
 
 function CholeBtn(props) {
     const {hints,resizeImg,prevImg, choleKey, active} = props;
-    console.log(active);
+    // console.log(active);
 	return (
 		<div className="chole-btn-wrap">
 			<div className={`chole-btn ${active && "active"}`}>

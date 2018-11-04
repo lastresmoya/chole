@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CholeBtn from "../_shared/CholeBtn";
+import CompWrapper from "../_shared/CompWrapper";
 
 class CompETVMP extends Component {
 	constructor(props) {
@@ -13,8 +14,7 @@ class CompETVMP extends Component {
 		const { settings } = this.props;
 		const name = "ETVMP";
 		return (
-			<div className="chole-section">
-				<h5 className="text-warning chole-title">Eustachian tube ventilation and mastiod pneumatisation</h5>
+            <CompWrapper title="Eustachian tube ventilation and mastiod pneumatisation" name={name}>
 				{/* X */}
 				<div>
                     <button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
@@ -35,7 +35,7 @@ class CompETVMP extends Component {
 				<div className="chole-row"></div>
 				{/* 4 */}
 				<div className="chole-row"></div>
-			</div>
+			</CompWrapper>
 		);
 	}
 }

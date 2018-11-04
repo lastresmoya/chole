@@ -23,7 +23,7 @@ function Header(props) {
 			{/* <img src={logo} alt=""/> */}
 			{/* Settings Modal */}
 			<div className="modal fade" id="settingsModal" tabIndex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
-				<div className="modal-dialog" role="document">
+				<div className="modal-dialog modal-dialog-centered" role="document">
 					<div className="modal-content">
 						<div className="modal-header">
 							<h5 className="modal-title" id="settingsModalLabel">ChOLE Settings</h5>

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import CholeBtn from "../_shared/CholeBtn";
+import CompWrapper from "../_shared/CompWrapper";
+
 import O0 from "./assets/O0.png";
 import O1 from "./assets/O1.png";
 import O2 from "./assets/O2.png";
@@ -21,16 +23,15 @@ class CompOCS extends Component {
 		const { settings } = this.props;
 		const name = "O";
 		return (
-			<div className="chole-section">
-                <h5 className="text-success chole-title">Ossicular chain status <small>(at end of surgery)</small></h5>
+			<CompWrapper title="Ossicular chain status (at end of surgery)" name={name}>
 				{/* X */}
 				<div>
-                    <button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
+					<button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
 				</div>
 				{/* 0 */}
 				<div className="chole-row">
-                    <CholeBtn {...settings} prevImg={O0} choleKey={`${name}0`} active/>
-                </div>
+					<CholeBtn {...settings} prevImg={O0} choleKey={`${name}0`} active/>
+				</div>
 				{/* 1 */}
 				<div className="chole-row row-double">
 					<CholeBtn {...settings} prevImg={O1} choleKey={`${name}1`} />
@@ -41,15 +42,15 @@ class CompOCS extends Component {
 				</div>
 				{/* 3 */}
 				<div className="chole-row row-double">
-                    <CholeBtn {...settings} prevImg={O3a} choleKey={`${name}3a`} />
-                    <CholeBtn {...settings} prevImg={O3b} choleKey={`${name}3b`} />
+					<CholeBtn {...settings} prevImg={O3a} choleKey={`${name}3a`} />
+					<CholeBtn {...settings} prevImg={O3b} choleKey={`${name}3b`} />
 				</div>
 				{/* 4 */}
-                <div className="chole-row row-double">
-                    <CholeBtn {...settings} prevImg={O4a} choleKey={`${name}4a`} />
-                    <CholeBtn {...settings} prevImg={O4b} choleKey={`${name}4b`} />
-                </div>
-			</div>
+				<div className="chole-row row-double">
+					<CholeBtn {...settings} prevImg={O4a} choleKey={`${name}4a`} />
+					<CholeBtn {...settings} prevImg={O4b} choleKey={`${name}4b`} />
+				</div>
+			</CompWrapper>
 		);
 	}
 }

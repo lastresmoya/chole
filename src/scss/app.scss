@@ -35,6 +35,12 @@ $comp-height: 7rem;
     @extend .w-100;
     @extend .pb-4;
     @extend .px-1;
+    @include media-breakpoint-down(sm) {
+        padding-bottom: .5rem!important;
+    }
+    .collapsible-btn {
+        white-space: normal;
+    }
 }
 .chole-title {
     @extend .text-sm-center;
@@ -48,7 +54,7 @@ $comp-height: 7rem;
 
     &.row-double {
         @extend .d-flex;
-        @extend .justify-content-between;
+        // @extend .justify-content-between;
         @extend .align-items-start;
     }
 

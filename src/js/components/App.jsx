@@ -49,8 +49,12 @@ class App extends React.Component {
 			<div className="app">
 				<Header/>
 				<div className="container">
-					<div className="d-sm-flex justify-content-sm-between align-items-baseline py-3">
-						<IdentifierCol/>
+					<div className="d-md-flex justify-content-md-between align-items-baseline py-3">
+						
+						{/* Hide On Mobile */}
+						<div className="d-none d-md-block">
+							<IdentifierCol />
+						</div>
 						<E settings={{hints,resizeImg}}/>
 						<OCS settings={{hints,resizeImg}}/>
 						<LTC settings={{hints,resizeImg}}/>

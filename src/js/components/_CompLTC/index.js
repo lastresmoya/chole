@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import CholeBtn from "../_shared/CholeBtn";
+import CompWrapper from "../_shared/CompWrapper";
+
 
 class CompLTC extends Component {
 	constructor(props) {
@@ -13,8 +15,7 @@ class CompLTC extends Component {
 		const { settings } = this.props;
 		const name = "LTC";
 		return (
-			<div className="chole-section">
-				<h5 className="text-danger chole-title">Life threatening complications</h5>
+            <CompWrapper title="Life threatening complications" name={name}>
 				{/* X */}
 				<div>
                     <button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
@@ -35,7 +36,7 @@ class CompLTC extends Component {
 				<div className="chole-row row-double">
 					<CholeBtn {...settings} choleKey={`${name}4`} >Intraranial Complications</CholeBtn>
 				</div>
-			</div>
+			</CompWrapper>
 		);
 	}
 }
