@@ -38,7 +38,8 @@ class CompWrapper extends Component {
 				{/* Display Collapsible on Mobile */}
 				<div className="d-md-none">
 					<button className="btn btn-dark btn-block collapsible-btn" type="button" data-toggle="collapse" data-target={`#collapse${name}`} aria-expanded="true" aria-controls={`collapse${name}`}>
-						{title}
+                        <span>{title}</span>
+                        <span>1a</span>
 					</button>
 				</div>
 				{/* On Mobile Collapse */}

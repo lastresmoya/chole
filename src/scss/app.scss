@@ -40,6 +40,10 @@ $comp-height: 7rem;
     }
     .collapsible-btn {
         white-space: normal;
+        @extend .d-flex;
+        @extend .justify-content-between;
+        @extend .align-items-center;
+        text-align: left;
     }
 }
 .chole-title {
