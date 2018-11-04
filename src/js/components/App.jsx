@@ -49,7 +49,7 @@ class App extends React.Component {
 			<div className="app">
 				<Header/>
 				<div className="container">
-					<div className="d-md-flex justify-content-md-between align-items-baseline py-3">
+					<div className="d-md-flex justify-content-md-between align-items-baseline pt-3 pb-sm-3 pb-5 mb-5 mb-sm-0">
 						
 						{/* Hide On Mobile */}
 						<div className="d-none d-md-block">

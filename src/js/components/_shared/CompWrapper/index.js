@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import IdentifierCol from "../IdentifierCol";
+
 
 class CompWrapper extends Component {
 	constructor(props){
@@ -40,8 +42,15 @@ class CompWrapper extends Component {
 					</button>
 				</div>
 				{/* On Mobile Collapse */}
-				<div id={`collapse${name}`} className={`collapse mt-2 mt-sm-0 ${renderMobile()}`} aria-labelledby={`heading${name}`} data-parent={`#accordion${name}`}>
-					{children}
+				<div id={`collapse${name}`} className={`collapse mt-2 mt-sm-0  ${renderMobile()}`} aria-labelledby={`heading${name}`} data-parent={`#accordion${name}`}>
+                    <div className="d-flex  d-sm-block">
+                        <div className="d-md-none">
+                            <IdentifierCol mobile/>
+                        </div>
+                        <div className="w-100">
+                            {children}
+                        </div>
+                    </div>
 				</div>
 			</div>
 		);
