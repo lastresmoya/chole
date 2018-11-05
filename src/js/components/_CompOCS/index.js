@@ -15,40 +15,44 @@ class CompOCS extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+            compName: "O",
 			numberVal: "X",
 			letterVal: "",
 		};
-	}
+    }
+    handleChange(num, letter) {
+        this.props.onUpdateSelect(this.state.compName, num, letter);
+    }
 	render() {
 		const { settings } = this.props;
-		const name = "O";
+		const name = this.state.compName;
 		return (
 			<CompWrapper title="Ossicular chain status (at end of surgery)" name={name}>
 				{/* X */}
 				<div>
-					<button className="btn btn-light btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
+                    <button className="btn btn-light btn-sm btn-block" onClick={() => this.handleChange("X", "")}><small>Not Identifiable (Not specified)</small></button>
 				</div>
 				{/* 0 */}
 				<div className="chole-row">
-					<CholeBtn {...settings} prevImg={O0} choleKey={`${name}0`} active/>
+                    <div onClick={() => this.handleChange(0, "")}><CholeBtn {...settings} prevImg={O0} choleKey={`${name}0`} active /></div>
 				</div>
 				{/* 1 */}
 				<div className="chole-row row-double">
-					<CholeBtn {...settings} prevImg={O1} choleKey={`${name}1`} />
+                    <div onClick={() => this.handleChange(1, "")}><CholeBtn {...settings} prevImg={O1} choleKey={`${name}1`} /></div>
 				</div>
 				{/* 2 */}
 				<div className="chole-row">
-					<CholeBtn {...settings} prevImg={O2} choleKey={`${name}2`}  />
+                    <div onClick={() => this.handleChange(2, "")}><CholeBtn {...settings} prevImg={O2} choleKey={`${name}2`} /></div>
 				</div>
 				{/* 3 */}
 				<div className="chole-row row-double">
-					<CholeBtn {...settings} prevImg={O3a} choleKey={`${name}3a`} />
-					<CholeBtn {...settings} prevImg={O3b} choleKey={`${name}3b`} />
+                    <div onClick={() => this.handleChange(3, "a")}><CholeBtn {...settings} prevImg={O3a} choleKey={`${name}3a`} /></div>
+                    <div onClick={() => this.handleChange(3, "b")}><CholeBtn {...settings} prevImg={O3b} choleKey={`${name}3b`} /></div>
 				</div>
 				{/* 4 */}
 				<div className="chole-row row-double">
-					<CholeBtn {...settings} prevImg={O4a} choleKey={`${name}4a`} />
-					<CholeBtn {...settings} prevImg={O4b} choleKey={`${name}4b`} />
+                    <div onClick={() => this.handleChange(4, "a")}><CholeBtn {...settings} prevImg={O4a} choleKey={`${name}4a`} /></div>
+                    <div onClick={() => this.handleChange(4, "b")}><CholeBtn {...settings} prevImg={O4b} choleKey={`${name}4b`} /></div>
 				</div>
 			</CompWrapper>
 		);

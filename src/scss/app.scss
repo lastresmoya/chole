@@ -55,6 +55,7 @@ $comp-height: 7rem;
 .chole-row {
     @extend .my-2;
     height: $comp-height;
+    > div {@extend .w-100}
 
     &.row-double {
         @extend .d-flex;

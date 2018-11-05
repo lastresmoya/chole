@@ -15,14 +15,14 @@ class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			E: "X",
-			OCS: "X",
-			LTC: "X",
-			ETVMP: "X",
-			overallStage: "Overall stage cannot be calculated",
+			Ch: {num:"X",letter:""},
+			O: {num:"X",letter:""},
+			L: {num:"X",letter:""},
+			E: {num:"X",letter:""},
 			hints: true,
 			resizeImg:true
 		};
+		this.updateComp = this.updateComp.bind(this);
 	}
 	componentDidMount(){
 		AOS.init({
@@ -32,19 +32,17 @@ class App extends React.Component {
 			delay: 100,
 		});
 	}
-	renderChole (){
-		const {E,OCS,LTC,ETVMP} = this.state;
-		return (
-			<span>
-				<span className="text-primary">Ch{E}</span>
-				<span className="text-success">O{OCS}</span>
-				<span className="text-danger">L{LTC}</span>
-				<span className="text-warning">E{ETVMP}</span>
-			</span>
-		);
+	updateComp(compName,num,letter){
+		this.setState({ [compName]: {num:num,letter:letter} });
 	}
 	render() {
-		const { hints,resizeImg,overallStage} = this.state;
+		const { hints,resizeImg} = this.state;
+        const chole = {
+            Ch: this.state.Ch,
+            O: this.state.O,
+            L: this.state.L,
+            E: this.state.E
+        }
 		return (
 			<div className="app">
 				<Header/>
@@ -55,13 +53,16 @@ class App extends React.Component {
 						<div className="d-none d-md-block">
 							<IdentifierCol />
 						</div>
-						<E settings={{hints,resizeImg}}/>
-						<OCS settings={{hints,resizeImg}}/>
-						<LTC settings={{hints,resizeImg}}/>
-						<ETVMP settings={{hints,resizeImg}}/>
+						<E settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<OCS settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<LTC settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<ETVMP settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
 					</div>
 				</div>
-				<Footer overallStage={overallStage} chole={this.renderChole()}/>
+                <Footer {...chole}/>
+				{/* <Footer overallStage={overallStage} chole={}/> */}
+                    {/* {renderChole()} */}
+                {/* </Footer>/> */}
 			</div>
 		);
 	}
