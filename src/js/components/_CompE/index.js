@@ -22,9 +22,9 @@ class CompE extends Component {
 	}
 	render() {
 		const {settings} = this.props;
-    	const name = this.state.compName;
+        const name = this.state.compName;
     	return (
-    		<CompWrapper title="Extension" name={name}>
+    		<CompWrapper title="Extension" name={name} selectedValue={this.props.selectedValue} >
 				{/* X */}
 				<div>
 					<button className="btn btn-light btn-sm btn-block" onClick={()=>this.handleChange("X","")}><small>Not Identifiable (Not specified)</small></button>

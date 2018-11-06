@@ -20,7 +20,7 @@ class Footer extends Component{
 			// Logic for Stage Number
 			let valueSum = 0;
 			const numValues = [Ch.num, O.num, L.num, E.num];
-            // Sum all values of num that are numbers
+			// Sum all values of num that are numbers
 			for (let index = 0; index < numValues.length; index++) {
 				const element = numValues[index];
 				if (typeof (element) === "number") {
@@ -42,20 +42,20 @@ class Footer extends Component{
 			return `${stageValue(valueSum)}`;
 		};
 		let renderPostFix = () => {
-            // IF any of the values of Num is an "X" , 
-            // return a string of X, else return empty string
+			// IF any of the values of Num is an "X" , 
+			// return a string of X, else return empty string
 			if (Ch.num === "X" || O.num === "X" || L.num === "X" || E.num === "X"){
 				return "x";
 			} else return "";
 		};
 		let renderOverAllStage = () => {
 			if (Ch.num === "X" && O.num === "X" && L.num === "X" && E.num === "X") {
-                // If all the values of num are an "X", 
-                // return this message
+				// If all the values of num are an "X", 
+				// return this message
 				return "Overall stage cannot be calculated";
 			}else {
-                // If there's no value of Num that is an "X" 
-                // then render stage and postfix
+				// If there's no value of Num that is an "X" 
+				// then render stage and postfix
 				return (
 					<span>
 						{renderStage()}
@@ -70,10 +70,7 @@ class Footer extends Component{
 			<footer>
 				<div className="container d-flex justify-content-between">
 					<div><strong>ChOLE Classification</strong>{renderChole()}</div>
-					<div>
-						<strong>OverallStage</strong>
-						{renderOverAllStage()}
-					</div>
+					<div><strong>OverallStage</strong>{renderOverAllStage()}</div>
 				</div>
 			</footer>
 		);

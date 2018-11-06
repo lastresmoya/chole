@@ -29,7 +29,7 @@ class CompWrapper extends Component {
 				return "show";
 			}
 		};
-		const {title,name,children} = this.props;
+        const {title,name,children,selectedValue} = this.props;
 		return (
 			<div className="chole-section accordion" id={`accordion${name}`}>
 				{/* On Desktop Display Title */}
@@ -39,7 +39,7 @@ class CompWrapper extends Component {
 				<div className="d-md-none">
 					<button className="btn btn-dark btn-block collapsible-btn" type="button" data-toggle="collapse" data-target={`#collapse${name}`} aria-expanded="true" aria-controls={`collapse${name}`}>
                         <span>{title}</span>
-                        <span>1a</span>
+                        <span className="ml-2">{selectedValue.num}{selectedValue.letter}</span>
 					</button>
 				</div>
 				{/* On Mobile Collapse */}

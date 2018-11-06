@@ -43,6 +43,7 @@ class App extends React.Component {
             L: this.state.L,
             E: this.state.E
         }
+
 		return (
 			<div className="app">
 				<Header/>
@@ -53,10 +54,10 @@ class App extends React.Component {
 						<div className="d-none d-md-block">
 							<IdentifierCol />
 						</div>
-						<E settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
-						<OCS settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
-						<LTC settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
-						<ETVMP settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<E selectedValue={chole.Ch} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<OCS selectedValue={chole.O} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<LTC selectedValue={chole.L} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<ETVMP selectedValue={chole.E} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
 					</div>
 				</div>
                 <Footer {...chole}/>

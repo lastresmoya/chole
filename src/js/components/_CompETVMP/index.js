@@ -18,7 +18,7 @@ class CompETVMP extends Component {
 		const { settings } = this.props;
 		const name = this.state.compName;
 		return (
-			<CompWrapper title="Eustachian tube ventilation and mastiod pneumatisation" name={name}>
+            <CompWrapper title="Eustachian tube ventilation and mastiod pneumatisation" name={name} selectedValue={this.props.selectedValue} >
 				{/* X */}
 				<div>
 					<button className="btn btn-light btn-sm btn-block" onClick={() => this.handleChange("X", "")}><small>Not Identifiable (Not specified)</small></button>
