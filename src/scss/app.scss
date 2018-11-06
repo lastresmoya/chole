@@ -28,6 +28,10 @@ footer {
     background-color: $body-bg;
     box-shadow: 0 -1rem 1rem rgba(0,0,0,.05);
     @extend .py-2;
+    font-size: 1.2rem;
+    @include media-breakpoint-down(sm) {
+        font-size: .8rem;
+    }
 }
 $comp-height: 7rem;
 .chole-section {
@@ -38,12 +42,19 @@ $comp-height: 7rem;
     @include media-breakpoint-down(sm) {
         padding-bottom: .5rem!important;
     }
+    // Mobile Collapsible Buttons
     .collapsible-btn {
         white-space: normal;
+        @extend .btn;
+        @extend .btn-block;
         @extend .d-flex;
         @extend .justify-content-between;
         @extend .align-items-center;
         text-align: left;
+        @extend .px-4;
+        @extend .py-2;
+        font-size: .8rem;
+        height: 4rem;
     }
 }
 .chole-title {
@@ -61,13 +72,16 @@ $comp-height: 7rem;
         @extend .d-flex;
         // @extend .justify-content-between;
         @extend .align-items-start;
+        > div {
+            &:first-child {padding-right: .4rem;}
+            &:last-child {padding-left: .4rem;}
+        }
     }
 
 }
 .chole-btn-wrap {
     @extend .w-100; 
-    // &:first-child {margin-right: .4rem;}
-    // &:last-child {margin-left: .4rem;}
+    
 }
 .chole-btn {
     @extend .w-100;
@@ -83,9 +97,6 @@ $comp-height: 7rem;
     position: relative;
     height: $comp-height;
     overflow: hidden;
-    &.active {
-        border-color: $gray-200!important;
-    }
 
     img {
         width: auto;
@@ -134,5 +145,34 @@ $comp-height: 7rem;
         // background-color: theme-color('primary');
         color: theme-color('primary');
         opacity: 1;
+    }
+}
+// Detailed Colors
+.chole-section {
+    .active {
+        &.btn, .btn {
+            // @extend .active;
+            background-repeat: repeat-x;
+        }
+    }
+    
+    &.chole-section-Ch {
+        
+        .chole-title {@extend .text-primary}
+        .collapsible-btn, .active .btn {@extend .btn-primary;}
+    }
+    &.chole-section-O {
+        .chole-title {@extend .text-success}
+        .collapsible-btn, .active .btn {@extend .btn-success;}
+
+    }
+    &.chole-section-L{
+        .chole-title {@extend .text-danger}
+        .collapsible-btn, .active .btn {@extend .btn-danger;}
+
+    }
+    &.chole-section-E {
+        .chole-title {@extend .text-warning}
+        .collapsible-btn, .active .btn {@extend .btn-warning;}
     }
 }

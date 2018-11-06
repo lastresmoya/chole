@@ -9,10 +9,10 @@ class Footer extends Component{
 		let renderChole = () => {
 			return (
 				<span>
-					<span className="text-primary">Ch{Ch.num}{Ch.letter}</span>
-					<span className="text-success">O{O.num}{O.letter}</span>
-					<span className="text-danger">L{L.num}{L.letter}</span>
-					<span className="text-warning">E{E.num}{E.letter}</span>
+                    <span className="text-primary"><strong>Ch</strong>{Ch.num}{Ch.letter} </span>
+					<span className="text-success"><strong>O</strong>{O.num}{O.letter} </span>
+					<span className="text-danger"><strong>L</strong>{L.num}{L.letter} </span>
+					<span className="text-warning"><strong>E</strong>{E.num}{E.letter}</span>
 				</span>
 			);
 		};
@@ -68,9 +68,9 @@ class Footer extends Component{
 		return (
 
 			<footer>
-				<div className="container d-flex justify-content-between">
-					<div><strong>ChOLE Classification</strong>{renderChole()}</div>
-					<div><strong>OverallStage</strong>{renderOverAllStage()}</div>
+				<div className="container d-sm-flex justify-content-sm-around">
+					<div><strong className="mr-2">ChOLE Classification</strong>{renderChole()}</div>
+					<div><strong className="mr-2">OverallStage</strong>{renderOverAllStage()}</div>
 				</div>
 			</footer>
 		);

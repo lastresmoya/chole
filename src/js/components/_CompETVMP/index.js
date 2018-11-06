@@ -8,32 +8,42 @@ class CompETVMP extends Component {
 		this.state = {
 			compName: "E",
 			numberVal: "X",
-			letterVal: "",
+            letterVal: "",
+            selectedField: "X"
 		};
 	}
-	handleChange(num, letter) {
-		this.props.onUpdateSelect(this.state.compName, num, letter);
-	}
+    handleChange(num, letter) {
+        this.props.onUpdateSelect(this.state.compName, num, letter);
+        const newSelectedField = `${num}${letter}`;
+        this.setState({ selectedField: newSelectedField });
+
+    }
+    toggleActive(val1, val2) {
+        const stringVal = val1 + val2;
+        if (this.state.selectedField === stringVal) {
+            return "active";
+        } else return "";
+    }
 	render() {
 		const { settings } = this.props;
 		const name = this.state.compName;
 		return (
             <CompWrapper title="Eustachian tube ventilation and mastiod pneumatisation" name={name} selectedValue={this.props.selectedValue} >
 				{/* X */}
-				<div>
-					<button className="btn btn-light btn-sm btn-block" onClick={() => this.handleChange("X", "")}><small>Not Identifiable (Not specified)</small></button>
+                <div className={`${this.toggleActive("X", "")}`} onClick={() => this.handleChange("X", "")}>
+					<button className="btn btn-sm btn-block" ><small>Not Identifiable (Not specified)</small></button>
 				</div>
 				{/* 0 */}
 				<div className="chole-row">
-					<div onClick={() => this.handleChange(0, "")}><CholeBtn {...settings} choleKey={`${name}0`} active>Moderate to good pneumatization <strong>good ventilation</strong></CholeBtn></div>
+                    <div className={`${this.toggleActive(0, "")}`} onClick={() => this.handleChange(0, "")}><CholeBtn {...settings} choleKey={`${name}0`} active>Moderate to good pneumatization <strong>good ventilation</strong></CholeBtn></div>
 				</div>
 				{/* 1 */}
 				<div className="chole-row">
-					<div onClick={() => this.handleChange(1, "")}><CholeBtn {...settings} choleKey={`${name}1`}>Moderate to good pneumatization <strong>poor ventilation</strong></CholeBtn></div>
+                    <div className={`${this.toggleActive(1, "")}`} onClick={() => this.handleChange(1, "")}><CholeBtn {...settings} choleKey={`${name}1`}>Moderate to good pneumatization <strong>poor ventilation</strong></CholeBtn></div>
 				</div>
 				{/* 2 */}
 				<div className="chole-row">
-					<div onClick={() => this.handleChange(2, "")}><CholeBtn {...settings} choleKey={`${name}2`}>Sclerotic mastoid</CholeBtn></div>
+                    <div className={`${this.toggleActive(2, "")}`} onClick={() => this.handleChange(2, "")}><CholeBtn {...settings} choleKey={`${name}2`}>Sclerotic mastoid</CholeBtn></div>
 				</div>
 				{/* 3 */}
 				<div className="chole-row"></div>

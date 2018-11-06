@@ -9,10 +9,10 @@ function Header(props) {
 		<header>
 			<div className="container py-1">
 				<div className="d-flex justify-content-between align-items-center">
-					<h1 className="h6 m-0 font-weight-normal">ChOLE - Staging System for Cholesteatoma</h1>
+                    <h1 className="h6 m-0 font-weight-strong mr-3">ChOLE - <small>Staging System for Cholesteatoma</small></h1>
 					<div className="d-flex">
-						<button className="btn btn-link"><FaIcon icon={faInfoCircle} /></button>
-						<button type="button" className="btn btn-link" data-toggle="modal" data-target="#settingsModal"><FaIcon icon={faCog} /></button>
+						<button className="btn-link border-0"><FaIcon icon={faInfoCircle} /></button>
+						<button className="btn-link border-0" data-toggle="modal" data-target="#settingsModal"><FaIcon icon={faCog} /></button>
 					</div>
 				</div>
 				<p className="d-none d-sm-block lh-sm m-0">

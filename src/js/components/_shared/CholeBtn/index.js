@@ -8,7 +8,8 @@ function CholeBtn(props) {
     // console.log(active);
 	return (
 		<div className="chole-btn-wrap">
-			<div className={`chole-btn ${active && "active"}`}>
+            {/* <div className={`chole-btn ${active && "active"}`}> */}
+            <div className="chole-btn">
 				{/* Display Image if there's one */}
 				{prevImg && <img src={prevImg}/>}
 				{/* If there's no Prop Img diplay Children */}

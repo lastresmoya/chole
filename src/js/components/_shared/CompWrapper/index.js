@@ -31,13 +31,13 @@ class CompWrapper extends Component {
 		};
         const {title,name,children,selectedValue} = this.props;
 		return (
-			<div className="chole-section accordion" id={`accordion${name}`}>
+			<div className={`chole-section accordion chole-section-${name}`} id={`accordion${name}`}>
 				{/* On Desktop Display Title */}
 				<h5 className="chole-title text-primary d-none d-md-block">{title}</h5>
 
 				{/* Display Collapsible on Mobile */}
 				<div className="d-md-none">
-					<button className="btn btn-dark btn-block collapsible-btn" type="button" data-toggle="collapse" data-target={`#collapse${name}`} aria-expanded="true" aria-controls={`collapse${name}`}>
+					<button className="collapsible-btn " type="button" data-toggle="collapse" data-target={`#collapse${name}`} aria-expanded="true" aria-controls={`collapse${name}`}>
                         <span>{title}</span>
                         <span className="ml-2">{selectedValue.num}{selectedValue.letter}</span>
 					</button>
