@@ -7,8 +7,8 @@ class CompWrapper extends Component {
 		super(props);
 		this.state= {
 			width: window.innerWidth,
-        };
-        this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
+		};
+		this.handleWindowSizeChange = this.handleWindowSizeChange.bind(this);
 	}
 	componentWillMount() {
 		window.addEventListener("resize", this.handleWindowSizeChange);
@@ -23,35 +23,52 @@ class CompWrapper extends Component {
 	handleWindowSizeChange() {
 		this.setState({ width: window.innerWidth });
 	}
-	render(){
+	render(){        
 		let renderMobile = () => {
-			if (window.innerWidth >= 720) {
+			let breakP = function(breakP) {
+				switch (breakP) {
+                    case "sm":
+                        return 540;
+                    case "md":
+                        return 720;
+                    case "lg":
+                        return 960;
+                    case "xl":
+                        return 1140;            
+                    default:
+                        return 720;
+				}
+            };
+
+			if (window.innerWidth >= breakP(this.props.breakP)) {
 				return "show";
 			}
 		};
-        const {title,name,children,selectedValue} = this.props;
+		const {title,name,children,selectedValue} = this.props;
 		return (
 			<div className={`chole-section accordion chole-section-${name}`} id={`accordion${name}`}>
 				{/* On Desktop Display Title */}
-				<h5 className="chole-title text-primary d-none d-md-block">{title}</h5>
+				<div className="chole-comp-header"> 
+					<h5 className="chole-title">{title}</h5>
+				</div>
 
 				{/* Display Collapsible on Mobile */}
-				<div className="d-md-none">
-					<button className="collapsible-btn " type="button" data-toggle="collapse" data-target={`#collapse${name}`} aria-expanded="true" aria-controls={`collapse${name}`}>
-                        <span>{title}</span>
-                        <span className="ml-2">{selectedValue.num}{selectedValue.letter}</span>
-					</button>
+				<div className="collapsible-container">
+					<div className="collapsible-btn "  data-toggle="collapse" data-target={`#collapse${name}`} aria-expanded="true" aria-controls={`collapse${name}`}>
+						<span>{title}</span>
+						<span className="ml-2">{selectedValue.num}{selectedValue.letter}</span>
+					</div>
 				</div>
 				{/* On Mobile Collapse */}
 				<div id={`collapse${name}`} className={`collapse mt-2 mt-sm-0  ${renderMobile()}`} aria-labelledby={`heading${name}`} data-parent={`#accordion${name}`}>
-                    <div className="d-flex  d-sm-block">
-                        <div className="d-md-none">
-                            <IdentifierCol mobile/>
-                        </div>
-                        <div className="w-100">
-                            {children}
-                        </div>
-                    </div>
+					<div className="d-flex d-lg-block">
+						<div className="d-lg-none">
+							<IdentifierCol mobile/>
+						</div>
+						<div className="w-100">
+							{children}
+						</div>
+					</div>
 				</div>
 			</div>
 		);

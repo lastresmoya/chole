@@ -2,9 +2,9 @@ import React from "react";
 
 function IdentifierCol(props) {
 	return (
-		<div className="flex-shrink-1 px-2 text-muted h6">
+		<div className="px-2 text-muted h6 chole-identifier">
 			
-            {!props.mobile && <h5 className="chole-title">&nbsp;</h5>}
+            {!props.mobile && <div className="chole-title-replace">&nbsp;</div>}
 			{/* X */}
 			<div className="py-1">X</div>
 			{/* 0 */}

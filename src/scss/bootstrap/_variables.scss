@@ -35,12 +35,12 @@ $grays: map-merge((
 
 $blue:    #3767A0 !default;
 $indigo:  #6F68D2 !default;
-$purple:  #564EF9 !default;
-$pink:    #e83e8c !default;
+$purple:  #9574EA !default;
+$pink:    #F262D3 !default;
 $red:     #FF6773 !default;
-$orange:  #fd7e14 !default;
+$orange:  #FF7D00 !default;
 $yellow:  #ffc107 !default;
-$green:   #28a745 !default;
+$green:   #3DD94A !default;
 $teal:    #20c997 !default;
 $cyan:    #1989BE !default;
 
@@ -61,14 +61,16 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $indigo !default;
+$primary:       $green !default;
 $secondary:     $gray-600 !default;
-$success:       $cyan !default;
+$success:       $pink !default;
 $info:          $cyan !default;
-$warning:       $purple !default;
-$danger:        $red !default;
+$warning:       $orange !default;
+$danger:        $purple !default;
 // $light:         $gray-200 !default;
+// $light:         $white !default;
 $light:         $white !default;
+
 $dark:          $gray-800 !default;
 
 $theme-colors: () !default;
@@ -101,8 +103,7 @@ $yiq-text-light: $white !default;
 $enable-caret:              true !default;
 $enable-rounded:            true !default;
 $enable-shadows:            false !default;
-// $enable-gradients:          false !default;
-$enable-gradients:          true !default;
+$enable-gradients:          false !default;
 $enable-transitions:        true !default;
 $enable-hover-media-query:  false !default;
 $enable-grid-classes:       true !default;
@@ -138,14 +139,16 @@ $sizes: (
 // Settings for the `<body>` element.
 
 // $body-bg:                   $white !default;
-$body-bg:                   #F7F8F8 !default;
+// $body-bg:                   #F7F8F8 !default;
+$body-bg:                   #ECECEC !default;
 $body-color:                $gray-900 !default;
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                theme-color("primary") !default;
+// $link-color:                theme-color("primary") !default;
+$link-color:                theme-color("dark") !default;
 $link-decoration:           none !default;
 $link-hover-color:          darken($link-color, 15%) !default;
 $link-hover-decoration:     underline !default;
@@ -374,9 +377,9 @@ $btn-link-disabled-color:     $gray-600 !default;
 $btn-block-spacing-y:         .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:           $border-radius-lg*1.5 !default;
+$btn-border-radius:           $border-radius !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
-$btn-border-radius-sm:        $border-radius-lg*1.5 !default;
+$btn-border-radius-sm:        $border-radius !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 

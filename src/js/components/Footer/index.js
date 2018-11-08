@@ -68,9 +68,9 @@ class Footer extends Component{
 		return (
 
 			<footer>
-				<div className="container d-sm-flex justify-content-sm-around">
-					<div><strong className="mr-2">ChOLE Classification</strong>{renderChole()}</div>
-					<div><strong className="mr-2">OverallStage</strong>{renderOverAllStage()}</div>
+				<div className="container d-sm-flex justify-content-start">
+					<div className="font-weight-bold"><span className="mr-2">ChOLE classification:</span>{renderChole()}</div>
+					<div className="font-weight-bold"><span className="mr-2">Overall Stage:</span>{renderOverAllStage()}</div>
 				</div>
 			</footer>
 		);

@@ -15,7 +15,6 @@
   @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
   @include transition($btn-transition);
 
-  box-shadow: 0 .3rem .7rem rgba(0,0,0,.1), 0 .1rem .3rem rgba(0,0,0,.15);
 
   // Share hover and focus styles
   @include hover-focus {

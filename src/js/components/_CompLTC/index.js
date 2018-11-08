@@ -29,11 +29,11 @@ class CompLTC extends Component {
 		const { settings } = this.props;
 		const name = this.state.compName;
 		return (
-			<CompWrapper title="Life threatening complications" name={name} selectedValue={this.props.selectedValue} >
+            <CompWrapper title="Life threatening complications" name={name} selectedValue={this.props.selectedValue} breakP={settings.breakP} >
 				{/* X */}
 				{/* `${selectedField == "X" ? "active" : ""}` */}
 				<div className={`${this.toggleActive("X", "")}`} onClick={(event) => this.handleChange("X", "")}>
-					<button className={"btn btn-sm btn-block"}><small>Not Identifiable (Not specified)</small></button>
+                    <div className="chole-btn chole-btn-sm"><small>Not Identifiable (Not specified)</small></div>
 				</div>
 				{/* 0 */}
 				<div className="chole-row">

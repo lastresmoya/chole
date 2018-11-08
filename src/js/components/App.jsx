@@ -1,5 +1,6 @@
 import React from "react";
 import AOS from "aos";
+import $ from "jquery";
 
 // Components
 import Header from "./Header";
@@ -30,7 +31,15 @@ class App extends React.Component {
 			duration: 600,
 			easing: "ease-in-out-sine",
 			delay: 100,
-		});
+        });
+        $(function () {
+            $(`[data-toggle="popover"]`).popover({
+                trigger: "focus",
+                container: "body",
+                html: true,
+            });
+            
+        })
 	}
 	updateComp(compName,num,letter){
 		this.setState({ [compName]: {num:num,letter:letter} });
@@ -41,23 +50,25 @@ class App extends React.Component {
             Ch: this.state.Ch,
             O: this.state.O,
             L: this.state.L,
-            E: this.state.E
+            E: this.state.E,
         }
+        
+        const breakP = "lg";
 
 		return (
 			<div className="app">
 				<Header/>
-				<div className="container">
-					<div className="d-md-flex justify-content-md-between align-items-baseline pt-3 pb-sm-3 pb-5 mb-5 mb-sm-0">
+				<div className="container pb-5 mb-5">
+                    <div className={`d-${breakP}-flex justify-content-${breakP}-between align-items-start pt-3 pb-sm-3 pb-5 mb-5 mb-sm-0`}>
 						
 						{/* Hide On Mobile */}
-						<div className="d-none d-md-block">
+						<div className="d-none d-lg-block">
 							<IdentifierCol />
 						</div>
-						<E selectedValue={chole.Ch} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
-						<OCS selectedValue={chole.O} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
-						<LTC selectedValue={chole.L} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
-						<ETVMP selectedValue={chole.E} settings={{hints,resizeImg}} onUpdateSelect={this.updateComp}/>
+						<E selectedValue={chole.Ch} settings={{hints,resizeImg,breakP}} onUpdateSelect={this.updateComp}/>
+						<OCS selectedValue={chole.O} settings={{hints,resizeImg,breakP}} onUpdateSelect={this.updateComp}/>
+						<LTC selectedValue={chole.L} settings={{hints,resizeImg,breakP}} onUpdateSelect={this.updateComp}/>
+						<ETVMP selectedValue={chole.E} settings={{hints,resizeImg,breakP}} onUpdateSelect={this.updateComp}/>
 					</div>
 				</div>
                 <Footer {...chole}/>

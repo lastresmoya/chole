@@ -1,7 +1,9 @@
 import React from "react";
 import logo from "./assets/logo.png";
+import ModalGeneral from "../_shared/ModalGeneral";
+import ModalSettings from "../_shared/ModalSettings";
 import FaIcon from "@fortawesome/react-fontawesome";
-import { faCog, faInfoCircle, faToggleOff } from "@fortawesome/fontawesome-free-solid";
+import { faCog, faInfoCircle } from "@fortawesome/fontawesome-free-solid";
 
 
 function Header(props) {
@@ -11,7 +13,7 @@ function Header(props) {
 				<div className="d-flex justify-content-between align-items-center">
                     <h1 className="h6 m-0 font-weight-strong mr-3">ChOLE - <small>Staging System for Cholesteatoma</small></h1>
 					<div className="d-flex">
-						<button className="btn-link border-0"><FaIcon icon={faInfoCircle} /></button>
+                        <button className="btn-link border-0" data-toggle="modal" data-target="#generalModal"><FaIcon icon={faInfoCircle} /></button>
 						<button className="btn-link border-0" data-toggle="modal" data-target="#settingsModal"><FaIcon icon={faCog} /></button>
 					</div>
 				</div>
@@ -20,28 +22,9 @@ function Header(props) {
 				</p>
 				
 			</div>
-			{/* <img src={logo} alt=""/> */}
-			{/* Settings Modal */}
-			<div className="modal fade" id="settingsModal" tabIndex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
-				<div className="modal-dialog modal-dialog-centered" role="document">
-					<div className="modal-content">
-						<div className="modal-header">
-							<h5 className="modal-title" id="settingsModalLabel">ChOLE Settings</h5>
-							<button type="button" className="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div className="modal-body">
-							Hints <FaIcon icon={faToggleOff}/>
-							Resize Images <FaIcon icon={faToggleOff}/>
-						</div>
-						<div className="modal-footer">
-							<button type="button" className="btn btn-primary">OK</button>
-							<button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>
+            {/* <img src={logo} alt=""/> */}
+            <ModalGeneral/>
+			<ModalSettings/>
 		</header>
 	);
 }

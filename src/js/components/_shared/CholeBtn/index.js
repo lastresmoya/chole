@@ -4,7 +4,11 @@ import { faExpand, faInfoCircle } from '@fortawesome/fontawesome-free-solid';
 
 
 function CholeBtn(props) {
-    const {hints,resizeImg,prevImg, choleKey, active} = props;
+    const {hints,resizeImg,prevImg, choleKey} = props;
+    const hintContent = `<div>
+        <li>Middle ear with extension into the attic and mastoid</li>
+        <li>+ supratubal space/Eustachian tube and/or sinus tympani</li>
+    </div>`;
     // console.log(active);
 	return (
 		<div className="chole-btn-wrap">
@@ -15,8 +19,12 @@ function CholeBtn(props) {
 				{/* If there's no Prop Img diplay Children */}
 				{!prevImg && <span>{props.children}</span>}
 				<div className="btn-options">
-					{/* IF hints are active on Settings, display hint */}
-					{hints && <button><FaIcon icon={faInfoCircle}/></button>}
+                    {/* IF hints are active on Settings, display hint */}
+                    {/* {hints && <button data-toggle="popover" title="Popover title" data-content="<small>wjvnwnvwe v e </small><div>wkjvwv</div>"><FaIcon icon={faInfoCircle} /></button>} */}
+
+                    {hints && <button data-toggle="popover" data-content={hintContent}><FaIcon icon={faInfoCircle}/></button>}
+                    
+
 					{prevImg &&
                         <span>
                         	{resizeImg && <button data-toggle="modal" data-target={`#imageModal${choleKey}`}><FaIcon icon={faExpand}/></button>}

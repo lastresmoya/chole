@@ -14,58 +14,98 @@
 @import '../../node_modules/aos/dist/aos.css';
 
 
-// body {
-//     background-image: url('../images/header-bg.png');
-// }
+// Variables
+$identifier-width: 2.5rem;
+$sections-bg: $gray-100;
+$btn-height: 7rem;
+$breakpoint: "lg";
+
+
 header {
-    border-bottom: 1px solid $gray-100;
+    background-color: $sections-bg;
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,.05);
 }
 footer {
     position: fixed;
     bottom: 0;left: 0;
     width: 100%;
-    border-top: 1px solid $gray-100;
-    background-color: $body-bg;
-    box-shadow: 0 -1rem 1rem rgba(0,0,0,.05);
-    @extend .py-2;
+    background-color: $sections-bg;
+    box-shadow: 0 -0.2rem 1rem rgba(0,0,0,.05);
+    @extend .py-4;
     font-size: 1.2rem;
-    @include media-breakpoint-down(sm) {
+    
+    .container {
+        > div {
+            margin-left: $identifier-width+.2rem; 
+            @include media-breakpoint-down($breakpoint) {
+                margin-left: 0;
+            }
+        }
+    }
+    @include media-breakpoint-down($breakpoint) {
         font-size: .8rem;
     }
 }
-$comp-height: 7rem;
+// Mobile Collapsible Container and Buttons
+
+.collapsible-container {
+    @include media-breakpoint-up($breakpoint) {
+        display: none;
+    }
+}
+.collapsible-btn {
+    white-space: normal;
+    @extend .btn;
+    @extend .btn-block;
+    @extend .d-flex;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+    text-align: left;
+    @extend .px-4;
+    @extend .py-2;
+    font-size: .8rem;
+    height: 4rem;
+    @extend .mb-3;
+}
 .chole-section {
     // @extend .col;
     @extend .w-100;
     @extend .pb-4;
     @extend .px-1;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down($breakpoint) {
         padding-bottom: .5rem!important;
     }
-    // Mobile Collapsible Buttons
-    .collapsible-btn {
-        white-space: normal;
-        @extend .btn;
-        @extend .btn-block;
-        @extend .d-flex;
-        @extend .justify-content-between;
-        @extend .align-items-center;
-        text-align: left;
-        @extend .px-4;
-        @extend .py-2;
+    
+}
+.chole-title-replace {
+    height: $btn-height*.5
+}
+.chole-comp-header{
+    height: $btn-height*.5;
+    border: 2px solid;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    border-radius: $btn-border-radius;
+    @extend .mb-2;
+
+     @include media-breakpoint-up($breakpoint) {
+        display: flex;     
+    }
+
+    @include media-breakpoint-down($breakpoint) {
+        display: none;
+    }
+    .chole-title {
+        @extend .text-sm-center;
         font-size: .8rem;
-        height: 4rem;
+        margin: 0;
     }
 }
-.chole-title {
-    @extend .text-sm-center;
-    height: $comp-height*.3;
-    font-size: .8rem;
-}
+
 
 .chole-row {
     @extend .my-2;
-    height: $comp-height;
+    height: $btn-height;
     > div {@extend .w-100}
 
     &.row-double {
@@ -73,8 +113,8 @@ $comp-height: 7rem;
         // @extend .justify-content-between;
         @extend .align-items-start;
         > div {
-            &:first-child {padding-right: .4rem;}
-            &:last-child {padding-left: .4rem;}
+            &:first-child {padding-right: .3rem;}
+            &:last-child {padding-left: .3rem;}
         }
     }
 
@@ -92,11 +132,15 @@ $comp-height: 7rem;
     @extend .align-items-center;
     @extend .justify-content-center;
     white-space: normal;
-    font-size: .6rem!important;
-    text-align: left;
+    font-size: .9rem!important;
+    text-align: center;
     position: relative;
-    height: $comp-height;
+    height: $btn-height;
     overflow: hidden;
+
+    &.chole-btn-sm {
+        height: $btn-height*.3;
+    }
 
     img {
         width: auto;
@@ -122,7 +166,7 @@ $comp-height: 7rem;
             }
         }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down($breakpoint) {
             opacity: 1;
         }
     }
@@ -147,6 +191,10 @@ $comp-height: 7rem;
         opacity: 1;
     }
 }
+// Identifier
+.chole-identifier {
+    width: $identifier-width;
+}
 // Detailed Colors
 .chole-section {
     .active {
@@ -157,22 +205,25 @@ $comp-height: 7rem;
     }
     
     &.chole-section-Ch {
-        
+        .chole-comp-header{border-color: theme-color("primary");}
         .chole-title {@extend .text-primary}
-        .collapsible-btn, .active .btn {@extend .btn-primary;}
+        .collapsible-btn, .active .btn {background-color: theme-color("primary"); color: $white}
     }
     &.chole-section-O {
+        .chole-comp-header{border-color: theme-color("success");}
         .chole-title {@extend .text-success}
-        .collapsible-btn, .active .btn {@extend .btn-success;}
+        .collapsible-btn, .active .btn {background-color: theme-color("success"); color: $white}
 
     }
     &.chole-section-L{
+        .chole-comp-header{border-color: theme-color("danger");}
         .chole-title {@extend .text-danger}
-        .collapsible-btn, .active .btn {@extend .btn-danger;}
+        .collapsible-btn, .active .btn {background-color: theme-color("danger"); color: $white}
 
     }
     &.chole-section-E {
+        .chole-comp-header{border-color: theme-color("warning");}
         .chole-title {@extend .text-warning}
-        .collapsible-btn, .active .btn {@extend .btn-warning;}
+        .collapsible-btn, .active .btn {background-color: theme-color("warning"); color: $white}
     }
 }

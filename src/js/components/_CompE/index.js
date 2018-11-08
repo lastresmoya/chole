@@ -35,10 +35,10 @@ class CompE extends Component {
 		const {settings} = this.props;
         const name = this.state.compName;
     	return (
-    		<CompWrapper title="Extension" name={name} selectedValue={this.props.selectedValue} >
+    		<CompWrapper title="Extension" name={name} selectedValue={this.props.selectedValue} breakP={settings.breakP}>
 				{/* X */}
                 <div className={`${this.toggleActive("X", "")}`} onClick={() => this.handleChange("X", "")}>
-					<button className="btn btn-sm btn-block"><small>Not Identifiable (Not specified)</small></button>
+					<div className="chole-btn chole-btn-sm"><small>Not Identifiable (Not specified)</small></div>
 				</div>
 				{/* 0 */}
 				<div className="chole-row"></div>
