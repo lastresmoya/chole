@@ -21,9 +21,10 @@ class App extends React.Component {
 			L: {num:"X",letter:""},
 			E: {num:"X",letter:""},
 			hints: true,
-			resizeImg:true
+			resizeImg: true
 		};
-		this.updateComp = this.updateComp.bind(this);
+        this.updateComp = this.updateComp.bind(this);
+        this.toggleSetting = this.toggleSetting.bind(this);
 	}
 	componentDidMount(){
 		AOS.init({
@@ -40,7 +41,10 @@ class App extends React.Component {
             });
             
         })
-	}
+    }
+    toggleSetting(setting){
+        this.setState({[setting]:!this.state[setting]})
+    }
 	updateComp(compName,num,letter){
 		this.setState({ [compName]: {num:num,letter:letter} });
 	}
@@ -57,7 +61,7 @@ class App extends React.Component {
 
 		return (
 			<div className="app">
-				<Header/>
+                <Header onUpdateSetting={this.toggleSetting} settings={{ hints, resizeImg }} />
 				<div className="container pb-5 mb-5">
                     <div className={`d-${breakP}-flex justify-content-${breakP}-between align-items-start pt-3 pb-sm-3 pb-5 mb-5 mb-sm-0`}>
 						

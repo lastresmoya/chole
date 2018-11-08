@@ -60,7 +60,7 @@ class CompWrapper extends Component {
 					</div>
 				</div>
 				{/* On Mobile Collapse */}
-				<div id={`collapse${name}`} className={`collapse mt-2 mt-sm-0  ${renderMobile()}`} aria-labelledby={`heading${name}`} data-parent={`#accordion${name}`}>
+				<div id={`collapse${name}`} className={`collapse mt-sm-2 ${renderMobile()}`} aria-labelledby={`heading${name}`} data-parent={`#accordion${name}`}>
 					<div className="d-flex d-lg-block">
 						<div className="d-lg-none">
 							<IdentifierCol mobile/>
