@@ -44,20 +44,23 @@ class Header extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-                                Hints 
-                                <button onClick={()=> this.toggleSetting("hints")}>
-                                    {hints && <FaIcon icon={faToggleOn} />}
-                                    {!hints && <FaIcon icon={faToggleOff} />}
-                                </button>
-                                Resize Images 
-                                <button onClick={() => this.toggleSetting("resizeImg")}>
-                                    {resizeImg && <FaIcon icon={faToggleOn} />}
-                                    {!resizeImg && <FaIcon icon={faToggleOff} />}
-                                </button>
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <label>Hints</label>
+                                    <button className="btn btn-light btn-lg " onClick={() => this.toggleSetting("hints")}>
+                                        {hints && <span className="text-primary"><FaIcon icon={faToggleOn} /></span>      }
+                                        {!hints && <span className="text-muted"><FaIcon icon={faToggleOff} /></span>}
+                                    </button>
+                                </div>
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <label>Resize Images</label>
+                                    <button className="btn btn-light btn-lg " onClick={() => this.toggleSetting("resizeImg")}>
+                                        {resizeImg && <span className="text-primary"><FaIcon icon={faToggleOn} /></span>}
+                                        {!resizeImg && <span className="text-muted"><FaIcon icon={faToggleOff} /></span>}
+                                    </button>
+                                </div>
 							</div>
 							<div className="modal-footer">
-								<button type="button" className="btn btn-primary">OK</button>
-								<button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" className="btn btn-primary px-5" data-dismiss="modal">OK</button>
 							</div>
 						</div>
 					</div>
