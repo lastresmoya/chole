@@ -8,7 +8,6 @@ class Footer extends Component{
 	constructor(props){
 		super(props);
 		this.state = { 
-			copiedString: "the copied text", 
 			copied: false,
 			copiedNotification : false
 		};
@@ -22,7 +21,8 @@ class Footer extends Component{
 	}
 
 	render(){
-    	const { Ch, O, L, E } = this.props;
+        const { Ch, O, L, E } = this.props;
+
     	let renderChole = () => {
     		return (
     			<span>
@@ -73,19 +73,19 @@ class Footer extends Component{
     		}else {
     			// If there's no value of Num that is an "X" 
     			// then render stage and postfix
-    			return (
-    				<span>
-    					{renderStage()}
-    					{renderPostFix()}
-    				</span>
-    			);
+    			return `${renderStage()}${renderPostFix()}`;
     		}
-    	};
-		
+        };
+        let getCholeStringToCopy = () => {
+            let classification = `Ch${Ch.num}${Ch.letter} O${O.num}${O.letter} L${L.num}${L.letter} E${E.num}${E.letter}`;
+            let overallStage = renderOverAllStage();
+            return `${classification}, ${overallStage}`;
+        }
+
     	return (
 
     		<footer className="btn btn-light text-left">
-                <CopyToClipboard onCopy={this.onCopy} text={this.state.copiedString}>
+                <CopyToClipboard onCopy={this.onCopy} text={getCholeStringToCopy()}>
     			<div className="container d-sm-flex justify-content-sm-between align-items-center">
     				<div className="d-sm-flex flex-sm-row">
     					<div className="font-weight-bold mr-sm-3 mr-0"><span className="mr-2">ChOLE classification:</span>{renderChole()}</div>
