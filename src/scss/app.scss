@@ -202,7 +202,7 @@ footer {
 .chole-section {
     .active {
         &.btn, .btn {
-            // @extend .active;
+            background-color: #D2E8FC;
             background-repeat: repeat-x;
         }
     }
@@ -210,23 +210,23 @@ footer {
     &.chole-section-Ch {
         .chole-comp-header{border-color: theme-color("primary");}
         .chole-title {@extend .text-primary}
-        .collapsible-btn, .active .btn {background-color: theme-color("primary"); color: $white}
+        .collapsible-btn {background-color: theme-color("primary"); color: $white}
     }
     &.chole-section-O {
         .chole-comp-header{border-color: theme-color("success");}
         .chole-title {@extend .text-success}
-        .collapsible-btn, .active .btn {background-color: theme-color("success"); color: $white}
+        .collapsible-btn {background-color: theme-color("success"); color: $white}
 
     }
     &.chole-section-L{
         .chole-comp-header{border-color: theme-color("danger");}
         .chole-title {@extend .text-danger}
-        .collapsible-btn, .active .btn {background-color: theme-color("danger"); color: $white}
+        .collapsible-btn {background-color: theme-color("danger"); color: $white}
 
     }
     &.chole-section-E {
         .chole-comp-header{border-color: theme-color("warning");}
         .chole-title {@extend .text-warning}
-        .collapsible-btn, .active .btn {background-color: theme-color("warning"); color: $white}
+        .collapsible-btn {background-color: theme-color("warning"); color: $white}
     }
 }
