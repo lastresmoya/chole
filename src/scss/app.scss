@@ -26,6 +26,8 @@ $breakpoint: "lg";
 header {
     background-color: $sections-bg;
     box-shadow: 0 0.2rem 1rem rgba(0,0,0,.05);
+    @extend .pb-3;
+    @extend .pt-2;
 }
 footer {
     position: fixed;
@@ -91,13 +93,13 @@ footer {
     border-radius: $btn-border-radius;
     @extend .mb-2;
 
-     @include media-breakpoint-up($breakpoint) {
-        display: flex;     
-    }
+    // @include media-breakpoint-up($breakpoint) {
+    //     display: flex;     
+    // }
 
-    @include media-breakpoint-down($breakpoint) {
-        display: none;
-    }
+    // @include media-breakpoint-down($breakpoint) {
+    //     display: none;
+    // }
     .chole-title {
         @extend .text-sm-center;
         font-size: .8rem;

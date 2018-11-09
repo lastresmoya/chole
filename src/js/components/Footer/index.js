@@ -77,7 +77,7 @@ class Footer extends Component{
     		}
         };
         let getCholeStringToCopy = () => {
-            let classification = `Ch${Ch.num}${Ch.letter} O${O.num}${O.letter} L${L.num}${L.letter} E${E.num}${E.letter}`;
+            let classification = `Ch${Ch.num}${Ch.letter}O${O.num}${O.letter}L${L.num}${L.letter}E${E.num}${E.letter}`;
             let overallStage = renderOverAllStage();
             return `${classification}, ${overallStage}`;
         }
@@ -89,7 +89,7 @@ class Footer extends Component{
     			<div className="container d-sm-flex justify-content-sm-between align-items-center">
     				<div className="d-sm-flex flex-sm-row">
     					<div className="font-weight-bold mr-sm-3 mr-0"><span className="mr-2">ChOLE classification:</span>{renderChole()}</div>
-    					<div className="font-weight-bold"><span className="mr-2">Overall Stage:</span>{renderOverAllStage()}</div>
+    					<div className="font-weight-bold"><span className="mr-2">Overall ChOLE stage:</span>{renderOverAllStage()}</div>
     				</div>
     				{/* <CopyToClipboard onCopy={this.onCopy} text={this.state.copiedString}> */}
     					<div className="btn btn-sm btn-light">
@@ -97,7 +97,7 @@ class Footer extends Component{
 							{this.state.copiedNotification ? 
 								<small className="text-primary">Copied <FaIcon icon={faCheckCircle} /></small> 
 								: 
-								<small>Copy to Clickboard</small>
+								<small>Copy to clipboard</small>
 							}
 						</div>
     				{/* </CopyToClipboard> */}

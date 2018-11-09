@@ -4,7 +4,7 @@ import CompWrapper from "../_shared/CompWrapper";
 import Ch1a from "./assets/Ch1a.png";
 import Ch1b from "./assets/Ch1b.png";
 import Ch2a from "./assets/Ch2a.png";
-import Ch2b from "./assets/Ch1b.png";
+import Ch2b from "./assets/Ch2b.png";
 import Ch3 from "./assets/Ch3.png";
 
 

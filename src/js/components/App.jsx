@@ -66,7 +66,7 @@ class App extends React.Component {
                     <div className={`d-${breakP}-flex justify-content-${breakP}-between align-items-start pt-3 pb-sm-3 pb-5 mb-5 mb-sm-0`}>
 						
 						{/* Hide On Mobile */}
-						<div className="d-none d-lg-block">
+                        <div className={`d-none d-${breakP}-block`}>
 							<IdentifierCol />
 						</div>
 						<E selectedValue={chole.Ch} settings={{hints,resizeImg,breakP}} onUpdateSelect={this.updateComp}/>
