@@ -41,7 +41,7 @@ class CompE extends Component {
 					<div className="chole-btn chole-btn-sm"><small>Not Identifiable (Not specified)</small></div>
 				</div>
 				{/* 0 */}
-				<div className="chole-row"></div>
+				<div className={`chole-row d-none d-${settings.breakP}-block`}></div>
 				{/* 1 */}
 				<div className="chole-row row-double">
 					<div className={`${this.toggleActive(1, "a")}`} onClick={() => this.handleChange(1,"a")}><CholeBtn {...settings} prevImg={Ch1a} choleKey={`${name}1a`} /></div>

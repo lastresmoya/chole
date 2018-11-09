@@ -46,9 +46,9 @@ class CompETVMP extends Component {
                     <div className={`${this.toggleActive(2, "")}`} onClick={() => this.handleChange(2, "")}><CholeBtn {...settings} choleKey={`${name}2`}>Sclerotic mastoid</CholeBtn></div>
 				</div>
 				{/* 3 */}
-				<div className="chole-row"></div>
+                <div className={`chole-row d-none d-${settings.breakP}-block`}></div>
 				{/* 4 */}
-				<div className="chole-row"></div>
+                <div className={`chole-row d-none d-${settings.breakP}-block`}></div>
 			</CompWrapper>
 		);
 	}

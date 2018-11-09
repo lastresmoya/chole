@@ -40,13 +40,13 @@ class CompLTC extends Component {
 					<div className={`${this.toggleActive(0,"")}`} onClick={(event) => this.handleChange(0, "")} ><CholeBtn {...settings} choleKey={`${name}0`}>None</CholeBtn></div>
 				</div>
 				{/* 1 */}
-				<div className="chole-row"></div>
+                <div className={`chole-row d-none d-${settings.breakP}-block`}></div>
 				{/* 2 */}
 				<div className="chole-row">
                     <div className={`${this.toggleActive(2, "")}`} onClick={(event) => this.handleChange(2, "")}><CholeBtn {...settings} choleKey={`${name}2`}>Extracranial complication</CholeBtn></div>
 				</div>
 				{/* 3 */}
-				<div className="chole-row"></div>
+                <div className={`chole-row d-none d-${settings.breakP}-block`}></div>
 				{/* 4 */}
 				<div className="chole-row">
                     <div className={`${this.toggleActive(4, "")}`} onClick={(event) => this.handleChange(4, "")}><CholeBtn {...settings} choleKey={`${name}4`} >Intraranial Complications</CholeBtn></div>

@@ -6,7 +6,7 @@ function IdentifierCol(props) {
 			
             {!props.mobile && <div className="chole-title-replace">&nbsp;</div>}
 			{/* X */}
-			<div className="py-1">X</div>
+			<div className="py-1 chole-x">X</div>
 			{/* 0 */}
 			<div className="chole-row d-flex align-items-center">0</div>
 			{/* 1 */}

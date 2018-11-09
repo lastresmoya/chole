@@ -18,6 +18,8 @@
 $identifier-width: 2.5rem;
 $sections-bg: $gray-100;
 $btn-height: 7rem;
+$btn-sm-height: 2rem;
+$comp-header-height: $btn-height*.5;
 $breakpoint: "lg";
 
 
@@ -77,10 +79,12 @@ footer {
     
 }
 .chole-title-replace {
-    height: $btn-height*.5
+    height: $comp-header-height;
+    @extend .mb-2;
 }
+.chole-x {height: $btn-sm-height}
 .chole-comp-header{
-    height: $btn-height*.5;
+    height: $comp-header-height;
     border: 2px solid;
     @extend .align-items-center;
     @extend .justify-content-center;
@@ -138,7 +142,7 @@ footer {
     overflow: hidden;
 
     &.chole-btn-sm {
-        height: $btn-height*.3;
+        height: $btn-sm-height;
     }
 
     img {

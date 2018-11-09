@@ -37,7 +37,7 @@ function CholeBtn(props) {
 			{resizeImg &&
                 <div className="modal fade" id={`imageModal${choleKey}`} tabIndex="-1" role="dialog" aria-labelledby={`imageModalLabel${choleKey}`} aria-hidden="true">
                 	<div className="modal-dialog modal-lg modal-dialog-centered" role="document">
-                		<div className="modal-content bg-transparent border-0">
+                		<div className="modal-content border-0">
                 			<div className="modal-header border-0">
                 				<button type="button" className="close chole-close" data-dismiss="modal" aria-label="Close">
                 					<span aria-hidden="true">&times;</span>
