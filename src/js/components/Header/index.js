@@ -14,7 +14,6 @@ class Header extends Component {
         this.props.onUpdateSetting(setting);
     }
 	render(){
-        console.log(this.props);
         const {hints,resizeImg} = this.props.settings;
 		return (
 			<header>
