@@ -6,8 +6,8 @@ import { faExpand, faInfoCircle } from '@fortawesome/fontawesome-free-solid';
 function CholeBtn(props) {
     const {hints,resizeImg,prevImg, choleKey} = props;
     const hintContent = `<div>
-        <li>Middle ear with extension into the attic and mastoid</li>
-        <li>+ supratubal space/Eustachian tube and/or sinus tympani</li>
+        <div>Middle ear with extension into the attic and mastoid</div>
+        <div>+ supratubal space/Eustachian tube and/or sinus tympani</div>
     </div>`;
     // console.log(active);
 	return (
@@ -23,8 +23,6 @@ function CholeBtn(props) {
                     {/* {hints && <button data-toggle="popover" title="Popover title" data-content="<small>wjvnwnvwe v e </small><div>wkjvwv</div>"><FaIcon icon={faInfoCircle} /></button>} */}
 
                     {hints && <button data-toggle="popover" data-content={hintContent}><FaIcon icon={faInfoCircle}/></button>}
-                    
-
 					{prevImg &&
                         <span>
                         	{resizeImg && <button data-toggle="modal" data-target={`#imageModal${choleKey}`}><FaIcon icon={faExpand}/></button>}

@@ -21,7 +21,7 @@ class Footer extends Component{
 	}
 
 	render(){
-        const { Ch, O, L, E } = this.props;
+		const { Ch, O, L, E } = this.props;
 
     	let renderChole = () => {
     		return (
@@ -32,18 +32,22 @@ class Footer extends Component{
     				<span className="text-warning"><strong>E</strong>{E.num}{E.letter}</span>
     			</span>
     		);
-    	};
+		};
+		let getStageValueSum = () => {
+			// Logic for Stage Number
+			let valueSum = 0;
+			const numValues = [Ch.num, O.num, L.num, E.num];
+			// Sum all values of num that are numbers
+			for (let index = 0; index < numValues.length; index++) {
+				const element = numValues[index];
+				if (typeof (element) === "number") {
+					valueSum = element + valueSum;
+				}
+            }
+            return valueSum;
+		};
     	let renderStage = () => {
-    		// Logic for Stage Number
-    		let valueSum = 0;
-    		const numValues = [Ch.num, O.num, L.num, E.num];
-    		// Sum all values of num that are numbers
-    		for (let index = 0; index < numValues.length; index++) {
-    			const element = numValues[index];
-    			if (typeof (element) === "number") {
-    				valueSum = element + valueSum;
-    			}
-    		}
+    		let valueSum = getStageValueSum();
     		// Switch Statement depending on valueSum of Numbers selected
     		let stageValue = (valueSum) => {
     			if (valueSum >= 1 && valueSum <= 3) {
@@ -70,22 +74,28 @@ class Footer extends Component{
     			// If all the values of num are an "X", 
     			// return this message
     			return "Overall stage cannot be calculated";
-    		}else {
-    			// If there's no value of Num that is an "X" 
+            } else if(getStageValueSum() === 0){
+                // If the sum off all values is 0,
+                // return same message 
+                return "Overall stage cannot be calculated";
+            }
+            else {
+                // If there's no value of Num that is an "X"
+                // and the sum of all values is more than 0 
     			// then render stage and postfix
     			return `${renderStage()}${renderPostFix()}`;
     		}
-        };
-        let getCholeStringToCopy = () => {
-            let classification = `Ch${Ch.num}${Ch.letter}O${O.num}${O.letter}L${L.num}${L.letter}E${E.num}${E.letter}`;
-            let overallStage = renderOverAllStage();
-            return `${classification}, ${overallStage}`;
-        }
+		};
+		let getCholeStringToCopy = () => {
+			let classification = `Ch${Ch.num}${Ch.letter}O${O.num}${O.letter}L${L.num}${L.letter}E${E.num}${E.letter}`;
+			let overallStage = renderOverAllStage();
+			return `${classification}, ${overallStage}`;
+		};
 
     	return (
 
     		<footer className="btn btn-light text-left">
-                <CopyToClipboard onCopy={this.onCopy} text={getCholeStringToCopy()}>
+				<CopyToClipboard onCopy={this.onCopy} text={getCholeStringToCopy()}>
     			<div className="container d-sm-flex justify-content-sm-between align-items-center">
     				<div className="d-sm-flex flex-sm-row">
     					<div className="font-weight-bold mr-sm-3 mr-0"><span className="mr-2">ChOLE classification:</span>{renderChole()}</div>
@@ -102,7 +112,7 @@ class Footer extends Component{
 						</div>
     				{/* </CopyToClipboard> */}
     			</div>
-                </CopyToClipboard>
+				</CopyToClipboard>
     		</footer>
     	);
 	}
