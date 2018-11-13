@@ -1,28 +1,33 @@
 import React from "react";
-import FaIcon from '@fortawesome/react-fontawesome';
-import { faExpand, faInfoCircle } from '@fortawesome/fontawesome-free-solid';
+import FaIcon from "@fortawesome/react-fontawesome";
+import { faExpand, faInfoCircle } from "@fortawesome/fontawesome-free-solid";
 
 
-function CholeBtn(props) {
-    const {hints,resizeImg,prevImg, choleKey} = props;
-    const hintContent = `<div>
-        <div>Middle ear with extension into the attic and mastoid</div>
-        <div>+ supratubal space/Eustachian tube and/or sinus tympani</div>
-    </div>`;
-    // console.log(active);
+function CholeBtn({hints,resizeImg,prevImg,choleKey,hintText,children}) {
+	function getHintText(){
+		if(hintText){
+			return `${hintText}`;
+		}else {
+			return "";
+		}
+	}
+	const hintContent = getHintText();
+    let renderHint = () => {
+        if(hints && hintContent){ 
+            return <button data-toggle="popover" data-content={hintContent}><FaIcon icon={faInfoCircle} /></button>
+        }
+    }
 	return (
 		<div className="chole-btn-wrap">
-            {/* <div className={`chole-btn ${active && "active"}`}> */}
-            <div className="chole-btn">
+			{/* <div className={`chole-btn ${active && "active"}`}> */}
+			<div className="chole-btn">
 				{/* Display Image if there's one */}
 				{prevImg && <img src={prevImg}/>}
 				{/* If there's no Prop Img diplay Children */}
-				{!prevImg && <span>{props.children}</span>}
+				{!prevImg && <span>{children}</span>}
 				<div className="btn-options">
-                    {/* IF hints are active on Settings, display hint */}
-                    {/* {hints && <button data-toggle="popover" title="Popover title" data-content="<small>wjvnwnvwe v e </small><div>wkjvwv</div>"><FaIcon icon={faInfoCircle} /></button>} */}
-
-                    {hints && <button data-toggle="popover" data-content={hintContent}><FaIcon icon={faInfoCircle}/></button>}
+					{/* IF hints are active on Settings and a prop with the content has been passed, display hint */}
+                    {renderHint()}
 					{prevImg &&
                         <span>
                         	{resizeImg && <button data-toggle="modal" data-target={`#imageModal${choleKey}`}><FaIcon icon={faExpand}/></button>}

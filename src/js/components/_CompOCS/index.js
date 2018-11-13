@@ -44,25 +44,25 @@ class CompOCS extends Component {
 				</div>
 				{/* 0 */}
 				<div className="chole-row">
-                    <div className={`${this.toggleActive(0, "")}`} onClick={() => this.handleChange(0, "")}><CholeBtn {...settings} prevImg={O0} choleKey={`${name}0`} active /></div>
+                    <div className={`${this.toggleActive(0, "")}`} onClick={() => this.handleChange(0, "")}><CholeBtn {...settings} hintText={`<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span>`} prevImg={O0} choleKey={`${name}0`} active /></div>
 				</div>
 				{/* 1 */}
 				<div className="chole-row">
-                    <div className={`${this.toggleActive(1, "")}`} onClick={() => this.handleChange(1, "")}><CholeBtn {...settings} prevImg={O1} choleKey={`${name}1`} /></div>
+                    <div className={`${this.toggleActive(1, "")}`} onClick={() => this.handleChange(1, "")}><CholeBtn {...settings} hintText={`<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span>`} prevImg={O1} choleKey={`${name}1`} /></div>
 				</div>
 				{/* 2 */}
 				<div className="chole-row">
-                    <div className={`${this.toggleActive(2, "")}`} onClick={() => this.handleChange(2, "")}><CholeBtn {...settings} prevImg={O2} choleKey={`${name}2`} /></div>
+                    <div className={`${this.toggleActive(2, "")}`} onClick={() => this.handleChange(2, "")}><CholeBtn {...settings} hintText={`<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span>`} prevImg={O2} choleKey={`${name}2`} /></div>
 				</div>
 				{/* 3 */}
 				<div className="chole-row row-double">
-					<div className={`${this.toggleActive(3,"a")}`} onClick={() => this.handleChange(3, "a")}><CholeBtn {...settings} prevImg={O3a} choleKey={`${name}3a`} /></div>
-					<div className={`${this.toggleActive(3,"b")}`} onClick={() => this.handleChange(3, "b")}><CholeBtn {...settings} prevImg={O3b} choleKey={`${name}3b`} /></div>
+					<div className={`${this.toggleActive(3,"a")}`} onClick={() => this.handleChange(3, "a")}><CholeBtn {...settings} hintText={`<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span>`} prevImg={O3a} choleKey={`${name}3a`} /></div>
+					<div className={`${this.toggleActive(3,"b")}`} onClick={() => this.handleChange(3, "b")}><CholeBtn {...settings} hintText={`<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span>`} prevImg={O3b} choleKey={`${name}3b`} /></div>
 				</div>
 				{/* 4 */}
 				<div className="chole-row row-double">
-					<div className={`${this.toggleActive(4,"a")}`} onClick={() => this.handleChange(4, "a")}><CholeBtn {...settings} prevImg={O4a} choleKey={`${name}4a`} /></div>
-					<div className={`${this.toggleActive(4,"b")}`} onClick={() => this.handleChange(4, "b")}><CholeBtn {...settings} prevImg={O4b} choleKey={`${name}4b`} /></div>
+					<div className={`${this.toggleActive(4,"a")}`} onClick={() => this.handleChange(4, "a")}><CholeBtn {...settings} hintText={`<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span>`} prevImg={O4a} choleKey={`${name}4a`} /></div>
+					<div className={`${this.toggleActive(4,"b")}`} onClick={() => this.handleChange(4, "b")}><CholeBtn {...settings} hintText={`<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span>`} prevImg={O4b} choleKey={`${name}4b`} /></div>
 				</div>
 			</CompWrapper>
 		);
