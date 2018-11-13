@@ -67,7 +67,7 @@ footer {
     text-align: left;
     @extend .px-4;
     @extend .py-2;
-    font-size: .8rem;
+    font-size: .95rem;
     height: 4rem;
 }
 .chole-section {
@@ -87,7 +87,7 @@ footer {
 .chole-x {height: $btn-sm-height}
 .chole-comp-header{
     height: $comp-header-height;
-    border: 2px solid;
+    // border: 2px solid;
     @extend .align-items-center;
     @extend .justify-content-center;
     border-radius: $btn-border-radius;
@@ -102,7 +102,7 @@ footer {
     // }
     .chole-title {
         @extend .text-sm-center;
-        font-size: .8rem;
+        font-size: .9rem;
         margin: 0;
     }
 }
@@ -142,6 +142,7 @@ footer {
     position: relative;
     height: $btn-height;
     overflow: hidden;
+    border: 1px solid;
 
     &.chole-btn-sm {
         height: $btn-sm-height;
@@ -211,25 +212,21 @@ footer {
     }
     
     &.chole-section-Ch {
-        .chole-comp-header{border-color: theme-color("primary");}
-        .chole-title {@extend .text-primary}
-        .collapsible-btn {background-color: theme-color("primary"); color: $white}
+        .chole-btn {border-color: theme-color("primary")}
+        .chole-comp-header,.collapsible-btn {background-color: theme-color("primary"); color: $white}
     }
     &.chole-section-O {
-        .chole-comp-header{border-color: theme-color("success");}
-        .chole-title {@extend .text-success}
-        .collapsible-btn {background-color: theme-color("success"); color: $white}
+        .chole-btn {border-color: theme-color("success")}
+        .chole-comp-header,.collapsible-btn {background-color: theme-color("success"); color: $white}
 
     }
     &.chole-section-L{
-        .chole-comp-header{border-color: theme-color("danger");}
-        .chole-title {@extend .text-danger}
-        .collapsible-btn {background-color: theme-color("danger"); color: $white}
+        .chole-btn {border-color: theme-color("danger")}
+        .chole-comp-header,.collapsible-btn {background-color: theme-color("danger"); color: $white}
 
     }
     &.chole-section-E {
-        .chole-comp-header{border-color: theme-color("warning");}
-        .chole-title {@extend .text-warning}
-        .collapsible-btn {background-color: theme-color("warning"); color: $white}
+        .chole-btn {border-color: theme-color("warning")}
+        .chole-comp-header,.collapsible-btn {background-color: theme-color("warning"); color: $white}
     }
 }

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import logo from "./assets/logo.png";
-import ModalGeneral from "../_shared/ModalGeneral";
+import logo from "./assets/logo-chole.png";
+// import ModalGeneral from "../_shared/ModalGeneral";
 import FaIcon from "@fortawesome/react-fontawesome";
 import { faCog, faInfoCircle, faToggleOn, faToggleOff } from "@fortawesome/fontawesome-free-solid";
 
@@ -18,20 +18,23 @@ class Header extends Component {
 		return (
 			<header>
 				<div className="container py-1">
-					<div className="d-flex justify-content-between align-items-center">
-						<h1 className="h6 m-0 font-weight-strong mr-3">ChOLE - <small>Staging System for Cholesteatoma</small></h1>
-						<div className="d-flex">
-							<button className="btn-link border-0" data-toggle="modal" data-target="#generalModal"><FaIcon icon={faInfoCircle} /></button>
+					<div className="d-flex justify-content-start align-items-center">
+                        <div><img src={logo} alt="" /></div>
+                        <div className="col-8 d-none d-sm-block ">
+                            <p className="px-4 m-0 text-muted font-weight-light">
+                                This tool calculates the ChOLE stage. Simply choose an option per category and the overall ChOLE tage is displayed in the footer area. Find out more information here.
+                            </p>
+                        </div>
+						<div className="d-flex ml-auto">
+							{/* <button className="btn-link border-0" data-toggle="modal" data-target="#generalModal"><FaIcon icon={faInfoCircle} /></button> */}
 							<button className="btn-link border-0" data-toggle="modal" data-target="#settingsModal"><FaIcon icon={faCog} /></button>
 						</div>
 					</div>
-					<p className="d-none d-sm-block lh-sm m-0">
-						<small className="text-muted">Calculate the ChOLE stage with this tool by walking through following steps. Select those items which fit to your patient and get an overall ChOLE stage as a result. Use the following shortcuts to quickly switch the single states: C, O, L, E (or A, S, D, F). With every change the new classification value is copied to the clipboard.</small>
-					</p>
+					
 
 				</div>
-				{/* <img src={logo} alt=""/> */}
-				<ModalGeneral />
+				
+				{/* <ModalGeneral /> */}
 				{/* Modal Settings */}
 				<div className="modal fade" id="settingsModal" tabIndex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
 					<div className="modal-dialog modal-dialog-centered" role="document">
