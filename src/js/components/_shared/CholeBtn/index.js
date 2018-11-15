@@ -14,7 +14,7 @@ function CholeBtn({hints,resizeImg,prevImg,choleKey,hintText,children}) {
 	const hintContent = getHintText();
     let renderHint = () => {
         if(hints && hintContent){ 
-            return <button data-toggle="popover" data-content={hintContent}><FaIcon icon={faInfoCircle} /></button>
+            return <button data-toggle="popover" data-content={hintContent}><FaIcon icon={faInfoCircle} /></button>;
         }
     }
 	return (

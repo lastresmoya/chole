@@ -37,7 +37,14 @@ module.exports = {
 				from: "index.html",
 				to: path.resolve(__dirname, "dist"),
 			},
-		]),
+        ]),
+        new CopyWebpackPlugin([
+            { 
+                context: path.resolve(__dirname, "src/"),
+                from: "favicon.png",
+                to: path.resolve(__dirname, "dist"),
+             }, 
+        ]),
 		new webpack.DefinePlugin({
 			PRODUCTION: process.env.NODE_ENV === "production"
 		}),

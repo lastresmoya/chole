@@ -35,7 +35,7 @@ class App extends React.Component {
         });
         $(function () {
             $(`[data-toggle="popover"]`).popover({
-                trigger: "focus",
+                trigger: "hover",
                 container: "body",
                 html: true,
             });
